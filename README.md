@@ -24,8 +24,13 @@ This lambda currently get triggered every night at 1am in my aws account to send
     ]
 }
 ```
-* Create a new Lamdbda function
+* Create a new Lambda function
 * Attach the above policy and ```AmazonSESFullAccess``` policy to the function
 * Remove the default code and copy paste the code from ```lambda_function.py``` from this repository in the editor of the AWS Lambda function console
 * Add an environment variable ```destination_email```. It's value is going to be your email
 * Save the function
+* Go to the CloudWatch service
+* Create a new rule
+* Use the cron expression ```0 5 * * ? *``` for the schedule
+* Select the lambda function you created above as the rule's target
+* Save the rule
