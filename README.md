@@ -31,6 +31,8 @@ This lambda currently get triggered every night at 1am in my aws account to send
 * Save the function
 * Go to the CloudWatch service
 * Create a new rule
-* Use the cron expression ```0 5 * * ? *``` for the schedule. Note that AWS servers run on GMT timezone so this cron translates to 1AM in EDT
+* Use the cron expression ```0 5 * * ? *``` for the schedule. Note that AWS servers run on GMT timezone so this cron translates to 1AM in EDT. Alternatively, you can use ``` 0 5 ? * 6 * ``` to email the cost usage at 1AM of every Friday EDT
 * Select the lambda function you created above as the rule's target
 * Save the rule
+
+### Please be mindful that running this service has a cost associated to it. Every API call costs $0.01USD in N. Virginia at the time when this was projected was created. 
